@@ -1,13 +1,453 @@
-<div style="width:100%; margin:0; padding:0; font-size:18px; text-align:center; color:gray; line-height:0.3">
-    <div style="padding:10px; text-align:left">
-        <div style="margin:0;">
-            <p style="margin:3px 0; line-height:20px;"><span style="font-family:arial; font-size:18px; font-weight:normal;">Hi There,</span></p>
-            <p style="margin:3px 0; line-height:20px;"><br/></p>
-			<p style="margin:3px 0; line-height:20px; font-family:arial; font-size:18px; font-weight:normal;">Please find the attached eCordum™ report recorded for <span style="font-weight:bold;">${patientName}</span> on <span style="font-weight:bold;">${recordTime}</span>.</p>
-			<p style="margin:3px 0; line-height:20px;"><br/></p>
-			<p style="margin:3px 0; line-height:20px; font-family:arial; font-size:18px; font-weight:normal;">It is noted that the report and data must be reviewed by a qualified physician. Should you have any technical questions, please do not hesitate to contact us by email at Support@eCordum.cn.</p>
-			<p style="margin:3px 0; line-height:20px;"><br/></p>
-            <p style="margin:3px 0; line-height:50px; font-family:arial; font-size:18px; font-weight:normal;">eCordum™ Technical Support</p>
-        </div>
-    </div>
-</div>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>eCordum Report</title>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="x-apple-disable-message-reformatting" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <style type="text/css">
+      /* Google font import Roboto */
+      @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+
+      /* Outlook link fix */
+      #outlook a {
+        padding: 0;
+      }
+
+      /* Hotmail background & line height fixes */
+      .ExternalClass {
+        width: 100% !important;
+      }
+
+      .ExternalClass,
+    .ExternalClass p,
+    .ExternalClass span,
+    .ExternalClass font,
+
+    /* Image borders & formatting */
+    img {
+        outline: none;
+        text-decoration: none;
+        -ms-interpolation-mode: bicubic;
+      }
+
+      a img {
+        border: none;
+      }
+
+      /* Re-style iPhone automatic links (eg. phone numbers) */
+      a {
+        color: #00a9ec !important;
+        text-decoration: none !important;
+      }
+
+      a:hover {
+        color: #0088ca !important;
+      }
+
+      /* Hotmail symbol fix for mobile devices */
+      .ExternalClass img[class^='Emoji'] {
+        width: 10px !important;
+        height: 10px !important;
+        display: inline !important;
+      }
+
+      @media screen and (max-width: 640px) {
+        .logoContainer {
+          padding-left: 30px !important;
+        }
+
+        .h1 {
+          line-height: 48px !important;
+          padding-right: 30px !important;
+          padding-left: 30px !important;
+          padding-top: 30px !important;
+          padding-bottom: 30px !important;
+        }
+
+        .h2 {
+          padding-right: 30px !important;
+          padding-left: 30px !important;
+        }
+
+        .name {
+          padding-top: 30px !important;
+        }
+
+        .block-start {
+          padding-top: 30px !important;
+        }
+
+        .p {
+          line-height: 28px !important;
+          padding-left: 30px !important;
+          padding-right: 30px !important;
+        }
+
+        .hr-spacer {
+          width: 30px !important;
+        }
+      }
+
+      @media screen and (max-width: 420px) {
+        .logoContainer {
+          padding-left: 20px !important;
+          padding-top: 10px !important;
+          padding-bottom: 10px !important;
+        }
+
+        .logo {
+          height: 32px !important;
+        }
+
+        .ecg {
+          height: 52px !important;
+        }
+
+        .h1 {
+          padding-right: 20px !important;
+          padding-left: 20px !important;
+        }
+
+        .h2 {
+          padding-right: 20px !important;
+          padding-left: 20px !important;
+        }
+
+        .p {
+          padding-left: 20px !important;
+          padding-right: 20px !important;
+        }
+
+        .hr-spacer {
+          width: 20px !important;
+        }
+      }
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+
+  <body
+    style="
+      padding: 0;
+      margin: 0;
+      -webkit-text-size-adjust: none;
+      -ms-text-size-adjust: 100%;
+      background-color: #eeeeee;
+      font-family: 'Roboto', Arial, Verdana, sans-serif;
+      font-size: 16px;
+      line-height: 24px;
+      color: #707070;
+    "
+  >
+    <!--[if mso]>
+      <style type="text/css">
+        body,
+        table,
+        td {
+          font-family: Arial, Helvetica, sans-serif !important;
+        }
+      </style>
+    <![endif]-->
+
+    <!-- // FULL EMAIL -->
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <!-- // LEFT SPACER CELL *** MUST HAVE A BACKGROUND COLOUR -->
+        <td bgcolor="#EEEEEE" style="font-size: 0px">&zwnj;</td>
+        <!-- LEFT SPACER CELL // -->
+
+        <!-- // MAIN CONTENT CELL -->
+        <td align="center" width="600" bgcolor="#FFFFFF">
+          <table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tbody>
+              <!-- // LOGO AND ECG GRAPHIC HEADER -->
+              <tr>
+                <td bgcolor="#00A9EC">
+                  <table
+                    width="100%"
+                    border="0"
+                    cellspacing="0"
+                    cellpadding="0"
+                  >
+                    <tr>
+                      <td
+                        class="logoContainer"
+                        align="left"
+                        bgcolor="#00A9EC"
+                        style="
+                          padding-top: 15px;
+                          padding-right: 0px;
+                          padding-bottom: 15px;
+                          padding-left: 50px;
+                        "
+                      >
+                        <img
+                          class="logo"
+                          src="http://images.ecordum.com/images/ecordum_logo.png"
+                          alt="ecordum logo"
+                          height="46"
+                          width="auto"
+                        />
+                      </td>
+                      <td align="right" bgcolor="#00A9EC">
+                        <img
+                          class="ecg"
+                          src="http://images.ecordum.com/images/ecgWave.png"
+                          alt="ecg wave graphic"
+                          height="76"
+                          width="auto"
+                        />
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <!-- LOGO AND ECG GRAPHIC HEADER // -->
+
+              <!-- TITLE -->
+              <tr>
+                <td
+                  align="center"
+                  class="h1"
+                  style="
+                    padding-top: 50px;
+                    padding-right: 50px;
+                    padding-bottom: 50px;
+                    padding-left: 50px;
+                    font-size: 36px;
+                    line-height: 43px;
+                    font-weight: 500;
+                    color: #212121;
+                  "
+                >
+                  eCordum™ Report
+                </td>
+              </tr>
+
+              <!-- HORIZONTAL LINE -->
+              <tr>
+                <td>
+                  <table
+                    width="100%"
+                    border="0"
+                    cellspacing="0"
+                    cellpadding="0"
+                  >
+                    <tr>
+                      <td
+                        class="hr-spacer"
+                        width="50"
+                        bgcolor="#FFFFFF"
+                        style="font-size: 0px; line-height: 0px"
+                      >
+                        &zwnj;
+                      </td>
+
+                      <td
+                        bgcolor="#00A9EC"
+                        style="height: 2px; font-size: 0px; line-height: 0px"
+                      >
+                        &zwnj;
+                      </td>
+                      <td
+                        class="hr-spacer"
+                        width="50"
+                        bgcolor="#FFFFFF"
+                        style="font-size: 0px; line-height: 0px"
+                      >
+                        &zwnj;
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+
+              <!-- PATIENT NAME -->
+              <tr>
+                <td
+                  align="right"
+                  class="h2 block-start"
+                  style="
+                    padding-top: 50px;
+                    padding-right: 50px;
+                    padding-left: 50px;
+                    font-size: 18px;
+                    line-height: 27px;
+                    font-weight: 500;
+                    color: #212121;
+                  "
+                >
+                  ${patientName}
+                </td>
+              </tr>
+
+              <!-- RECORD TIME -->
+              <tr>
+                <td
+                  align="right"
+                  class="h2"
+                  style="
+                    padding-top: 8px;
+                    padding-right: 50px;
+                    padding-left: 50px;
+                    font-size: 18px;
+                    line-height: 27px;
+                    font-weight: 500;
+                    color: #212121;
+                  "
+                >
+                  ${recordTime}
+                </td>
+              </tr>
+
+              <!-- // EMAIL TEXT -->
+
+              <!-- GREETING -->
+              <tr>
+                <td
+                  align="left"
+                  class="p block-start"
+                  style="
+                    padding-top: 50px;
+                    padding-right: 50px;
+                    padding-left: 50px;
+                    font-size: 16px;
+                    line-height: 24px;
+                    font-weight: 400;
+                    color: #707070;
+                  "
+                >
+                  Hello,
+                </td>
+              </tr>
+
+              <!-- PARAGRAPH 1 -->
+              <tr>
+                <td
+                  align="left"
+                  class="p"
+                  style="
+                    padding-top: 25px;
+                    padding-right: 50px;
+                    padding-left: 50px;
+                    font-size: 16px;
+                    line-height: 24px;
+                    font-weight: 400;
+                    color: #707070;
+                  "
+                >
+                  Please find the attached eCordum™ report recorded for
+                  ${patientName} on ${recordTime}.
+                </td>
+              </tr>
+
+              <!-- PARAGRAPH 2 -->
+              <tr>
+                <td
+                  align="left"
+                  class="p"
+                  style="
+                    padding-top: 25px;
+                    padding-right: 50px;
+                    padding-left: 50px;
+                    font-size: 16px;
+                    line-height: 24px;
+                    font-weight: 400;
+                    color: #707070;
+                  "
+                >
+                  It is noted that the report and data must be reviewed by a
+                  qualified physician. Should you have any technical questions,
+                  please do not hesitate to
+                  <a
+                    href="mailto:support@ecordum.com"
+                    style="
+                      color: #00a9ec;
+                      font-weight: 500;
+                      text-decoration: none;
+                    "
+                    >contact us</a
+                  >.
+                </td>
+              </tr>
+
+              <!-- SIGN OFF -->
+              <tr>
+                <td
+                  align="left"
+                  class="p block-start"
+                  style="
+                    padding-top: 50px;
+                    padding-bottom: 50px;
+                    padding-right: 50px;
+                    padding-left: 50px;
+                    font-size: 16px;
+                    line-height: 24px;
+                    font-weight: 400;
+                    color: #707070;
+                  "
+                >
+                  Thank you,
+                  <br />
+                  eCordum™ Technical Support
+                </td>
+              </tr>
+              <!-- EMAIL TEXT // -->
+
+              <!-- FOOTER -->
+              <tr>
+                <td
+                  align="left"
+                  bgcolor="#E0E0E0"
+                  class="p"
+                  style="
+                    padding-top: 50px;
+                    padding-bottom: 50px;
+                    padding-right: 50px;
+                    padding-left: 50px;
+                    font-size: 16px;
+                    line-height: 24px;
+                    font-weight: 400;
+                    color: #707070;
+                  "
+                >
+                  This email and any files transmitted with it are confidential
+                  and intended solely for the use of the individual or entity to
+                  whom they are addressed.
+                </td>
+              </tr>
+
+              <!-- SUB FOOTER -->
+              <tr>
+                <td
+                  class="logoContainer"
+                  align="center"
+                  bgcolor="#EEEEEE"
+                  style="padding-top: 25px; padding-bottom: 50px"
+                >
+                  <a href="https://www.ecordum.com/">
+                    <img
+                      src="http://images.ecordum.com/images/ecordum_logo_gray.png"
+                      alt="ecordum logo link"
+                      height="34"
+                      width="auto"
+                    />
+                  </a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+        <!-- MAIN CONTENT CELL // -->
+
+        <!-- // RIGHT SPACER CELL *** MUST HAVE A BACKGROUND COLOUR -->
+        <td bgcolor="#EEEEEE" style="font-size: 0px">&zwnj;</td>
+        <!-- RIGHT SPACER CELL // -->
+      </tr>
+    </table>
+    <!-- FULL EMAIL // -->
+  </body>
+</html>
