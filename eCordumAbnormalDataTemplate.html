@@ -1,41 +1,693 @@
-<div style="width:100%; margin:0; padding:0; font-size:18px; text-align:center; color:gray; line-height:0.3">
-	<div style="padding:10px; text-align:left">
-		<div style="margin:0;">
-			<p style="margin:3px 0; line-height:20px;"><span style="font-family:arial; font-size:18px; font-weight:normal;">Hi There,</span></p>
-			<p style="margin:3px 0; line-height:20px;"><br/></p>
-			<p style="margin:3px 0; line-height:20px; font-family:arial; font-size:18px; font-weight:normal;">This record showed significantly different interpretation when using 2 analysis libraries. The corresponding annotation files can be found from below links: </p>
-			<p style="margin:3px 0; line-height:20px;"><br/></p>
-			<p style="margin:3px 0; line-height:20px; font-family:arial; font-size:18px; font-weight:normal;"><span style="font-weight:bold;">${annFile_new}</span></p>
-			<p style="margin:3px 0; line-height:20px;"><br/></p>
-			<p style="margin:3px 0; line-height:20px; font-family:arial; font-size:18px; font-weight:normal;"><span style="font-weight:bold;">${annFile_old}</span></p>
-			<p style="margin:3px 0; line-height:20px;"><br/></p>
-			<p style="margin:3px 0; line-height:20px; font-family:arial; font-size:18px; font-weight:normal;"><span style="font-weight:bold;">${rhythmFile}</span></p>
-			<p style="margin:3px 0; line-height:20px;"><br/></p>
-			<p style="margin:3px 0; line-height:30px;">
-				<table border=1 width=100%>
-					<tbody>
-						<tr>
-							<td height=30>Library</td>
-							<td>HR_MAX</td>
-							<td>HR_MIN</td>
-							<td>HR_AVG</td>
-						</tr>
-						<tr>
-							<td height=30>ECG.a</td>
-							<td>${hr_max}</td>
-							<td>${hr_min}</td>
-							<td>${hr_aver}</td>
-						</tr>
-						<tr>
-							<td height=30>EcgAnalyzer</td>
-							<td>${hr_max_new}</td>
-							<td>${hr_min_new}</td>
-							<td>${hr_aver_new}</td>
-						</tr>
-					</tbody>
-				</table>
-			</p>
-			<p style="margin:3px 0; line-height:50px; font-family:arial; font-size:16px; font-weight:normal;">eCordum™ Technical Support</p>
-		</div>
-	</div>
-</div>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>eCordum Abnormal Data Record</title>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="x-apple-disable-message-reformatting" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <style type="text/css">
+      /* Google font import Roboto */
+      @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+
+      /* Outlook link fix */
+      #outlook a {
+        padding: 0;
+      }
+
+      /* Hotmail background & line height fixes */
+      .ExternalClass {
+        width: 100% !important;
+      }
+
+      .ExternalClass,
+    .ExternalClass p,
+    .ExternalClass span,
+    .ExternalClass font,
+
+    /* Image borders & formatting */
+    img {
+        outline: none;
+        text-decoration: none;
+        -ms-interpolation-mode: bicubic;
+      }
+
+      a img {
+        border: none;
+      }
+
+      /* Re-style iPhone automatic links (eg. phone numbers) */
+      a {
+        color: #00a9ec !important;
+        text-decoration: none !important;
+      }
+
+      a:hover {
+        color: #0088ca !important;
+      }
+
+      /* Hotmail symbol fix for mobile devices */
+      .ExternalClass img[class^='Emoji'] {
+        width: 10px !important;
+        height: 10px !important;
+        display: inline !important;
+      }
+
+      /* For Tablets and Mobile */
+      @media screen and (max-width: 640px) {
+        .logoContainer {
+          padding-left: 30px !important;
+        }
+
+        .h1 {
+          font-size: 28px !important;
+          line-height: 34px !important;
+          padding-right: 30px !important;
+          padding-left: 30px !important;
+          padding-top: 30px !important;
+          padding-bottom: 30px !important;
+        }
+
+        .h2,
+        .data-table {
+          padding-right: 30px !important;
+          padding-left: 30px !important;
+        }
+
+        .table-text {
+          font-size: 13px !important;
+          line-height: 20px !important;
+        }
+
+        .block-start {
+          padding-top: 30px !important;
+        }
+
+        .p {
+          line-height: 28px !important;
+          padding-left: 30px !important;
+          padding-right: 30px !important;
+        }
+
+        .hr-spacer {
+          width: 30px !important;
+        }
+      }
+
+      @media screen and (max-width: 420px) {
+        .logoContainer {
+          padding-left: 20px !important;
+          padding-top: 10px !important;
+          padding-bottom: 10px !important;
+        }
+
+        .logo {
+          height: 32px !important;
+        }
+
+        .ecg {
+          height: 52px !important;
+        }
+
+        .h1 {
+          font-size: 24px !important;
+          padding-right: 20px !important;
+          padding-left: 20px !important;
+        }
+
+        .h2,
+        .data-table {
+          padding-right: 20px !important;
+          padding-left: 20px !important;
+        }
+
+        .table-text {
+          font-size: 10px !important;
+          line-height: 15px !important;
+        }
+
+        .p {
+          padding-left: 20px !important;
+          padding-right: 20px !important;
+        }
+
+        .hr-spacer {
+          width: 20px !important;
+        }
+      }
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+
+  <body
+    style="
+      padding: 0;
+      margin: 0;
+      -webkit-text-size-adjust: none;
+      -ms-text-size-adjust: 100%;
+      background-color: #eeeeee;
+      font-family: 'Roboto', Arial, Verdana, sans-serif;
+      font-size: 16px;
+      line-height: 24px;
+      color: #707070;
+    "
+  >
+    <!--[if mso]>
+      <style type="text/css">
+        body,
+        table,
+        td {
+          font-family: Arial, Helvetica, sans-serif !important;
+        }
+      </style>
+    <![endif]-->
+
+    <!-- // FULL EMAIL -->
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <!-- // LEFT SPACER CELL *** MUST HAVE A BACKGROUND COLOUR -->
+        <td bgcolor="#EEEEEE" style="font-size: 0px">&zwnj;</td>
+        <!-- LEFT SPACER CELL // -->
+
+        <!-- // MAIN CONTENT CELL -->
+        <td align="center" width="600" bgcolor="#FFFFFF">
+          <table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tbody>
+              <!-- // LOGO AND ECG GRAPHIC HEADER -->
+              <tr>
+                <td bgcolor="#00A9EC">
+                  <table
+                    width="100%"
+                    border="0"
+                    cellspacing="0"
+                    cellpadding="0"
+                  >
+                    <tr>
+                      <td
+                        class="logoContainer"
+                        align="left"
+                        bgcolor="#00A9EC"
+                        style="
+                          padding-top: 15px;
+                          padding-right: 0px;
+                          padding-bottom: 15px;
+                          padding-left: 50px;
+                        "
+                      >
+                        <img
+                          class="logo"
+                          src="http://images.ecordum.com/images/ecordum_logo.png"
+                          alt="ecordum logo"
+                          height="46"
+                          width="auto"
+                        />
+                      </td>
+                      <td align="right" bgcolor="#00A9EC">
+                        <img
+                          class="ecg"
+                          src="http://images.ecordum.com/images/ecgWave.png"
+                          alt="ecg wave graphic"
+                          height="76"
+                          width="auto"
+                        />
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <!-- LOGO AND ECG GRAPHIC HEADER // -->
+
+              <!-- TITLE -->
+              <tr>
+                <td
+                  align="center"
+                  class="h1"
+                  style="
+                    padding-top: 50px;
+                    padding-right: 50px;
+                    padding-bottom: 50px;
+                    padding-left: 50px;
+                    font-size: 36px;
+                    line-height: 43px;
+                    font-weight: 500;
+                    color: #212121;
+                  "
+                >
+                  eCordum™ Abnormal Data Record
+                </td>
+              </tr>
+
+              <!-- HORIZONTAL LINE -->
+              <tr>
+                <td>
+                  <table
+                    width="100%"
+                    border="0"
+                    cellspacing="0"
+                    cellpadding="0"
+                  >
+                    <tr>
+                      <td
+                        class="hr-spacer"
+                        width="50"
+                        bgcolor="#FFFFFF"
+                        style="font-size: 0px; line-height: 0px"
+                      >
+                        &zwnj;
+                      </td>
+
+                      <td
+                        bgcolor="#00A9EC"
+                        style="height: 2px; font-size: 0px; line-height: 0px"
+                      >
+                        &zwnj;
+                      </td>
+                      <td
+                        class="hr-spacer"
+                        width="50"
+                        bgcolor="#FFFFFF"
+                        style="font-size: 0px; line-height: 0px"
+                      >
+                        &zwnj;
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+
+              <!-- // EMAIL TEXT -->
+
+              <!-- GREETING -->
+              <tr>
+                <td
+                  align="left"
+                  class="p block-start"
+                  style="
+                    padding-top: 50px;
+                    padding-right: 50px;
+                    padding-left: 50px;
+                    font-size: 16px;
+                    line-height: 24px;
+                    font-weight: 400;
+                    color: #707070;
+                  "
+                >
+                  Hello,
+                </td>
+              </tr>
+
+              <!-- PARAGRAPH 1 -->
+              <tr>
+                <td
+                  align="left"
+                  class="p"
+                  style="
+                    padding-top: 25px;
+                    padding-right: 50px;
+                    padding-left: 50px;
+                    font-size: 16px;
+                    line-height: 24px;
+                    font-weight: 400;
+                    color: #707070;
+                  "
+                >
+                  This record showed significantly different interpretation when
+                  using 2 analysis libraries. The corresponding annotation files
+                  can be found from below links:
+                </td>
+              </tr>
+
+              <!-- ANNOTATION FILE NEW -->
+              <tr>
+                <td
+                  align="left"
+                  class="h2"
+                  style="
+                    padding-top: 25px;
+                    padding-right: 50px;
+                    padding-left: 50px;
+                    font-size: 18px;
+                    line-height: 27px;
+                    font-weight: 500;
+                    color: #212121;
+                  "
+                >
+                  ${annFile_new}
+                </td>
+              </tr>
+
+              <!-- ANNOTATION FILE OLD -->
+              <tr>
+                <td
+                  align="left"
+                  class="h2"
+                  style="
+                    padding-top: 8px;
+                    padding-right: 50px;
+                    padding-left: 50px;
+                    font-size: 18px;
+                    line-height: 27px;
+                    font-weight: 500;
+                    color: #212121;
+                  "
+                >
+                  ${annFile_old}
+                </td>
+              </tr>
+
+              <!-- RHYTHM FILE -->
+              <tr>
+                <td
+                  align="left"
+                  class="h2"
+                  style="
+                    padding-top: 8px;
+                    padding-right: 50px;
+                    padding-left: 50px;
+                    font-size: 18px;
+                    line-height: 27px;
+                    font-weight: 500;
+                    color: #212121;
+                  "
+                >
+                  ${rhythmFile}
+                </td>
+              </tr>
+
+              <!-- // DATA TABLE -->
+              <tr>
+                <td
+                  class="data-table"
+                  style="
+                    padding-top: 25px;
+                    padding-right: 50px;
+                    padding-left: 50px;
+                  "
+                >
+                  <table
+                    width="100%"
+                    border="0"
+                    cellspacing="0"
+                    cellpadding="0"
+                    style="border: solid 1px #00a9ec"
+                  >
+                    <tr>
+                      <td
+                        align="left"
+                        bgcolor="#81d4f5"
+                        style="
+                          padding-right: 4px;
+                          padding-left: 4px;
+                          font-size: 16px;
+                          line-height: 24px;
+                          font-weight: 500;
+                          color: #212121;
+                          border: solid 1px #00a9ec;
+                        "
+                      >
+                        Library
+                      </td>
+                      <td
+                        align="left"
+                        bgcolor="#81d4f5"
+                        style="
+                          padding-right: 4px;
+                          padding-left: 4px;
+                          font-size: 16px;
+                          line-height: 24px;
+                          font-weight: 500;
+                          color: #212121;
+                          border: solid 1px #00a9ec;
+                        "
+                      >
+                        HR_MAX
+                      </td>
+                      <td
+                        align="left"
+                        bgcolor="#81d4f5"
+                        style="
+                          padding-right: 4px;
+                          padding-left: 4px;
+                          font-size: 16px;
+                          line-height: 24px;
+                          font-weight: 500;
+                          color: #212121;
+                          border: solid 1px #00a9ec;
+                        "
+                      >
+                        HR_MAX
+                      </td>
+                      <td
+                        align="left"
+                        bgcolor="#81d4f5"
+                        style="
+                          padding-right: 4px;
+                          padding-left: 4px;
+                          font-size: 16px;
+                          line-height: 24px;
+                          font-weight: 500;
+                          color: #212121;
+                          border: solid 1px #00a9ec;
+                        "
+                      >
+                        HR_AVG
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td
+                        class="table-text"
+                        align="left"
+                        style="
+                          padding-right: 4px;
+                          padding-left: 4px;
+                          font-size: 16px;
+                          line-height: 24px;
+                          font-weight: 400;
+                          color: #707070;
+                          border: solid 1px #00a9ec;
+                        "
+                      >
+                        ECG.a
+                      </td>
+                      <td
+                        class="table-text"
+                        align="left"
+                        style="
+                          padding-right: 4px;
+                          padding-left: 4px;
+                          font-size: 16px;
+                          line-height: 24px;
+                          font-weight: 400;
+                          color: #707070;
+                          border: solid 1px #00a9ec;
+                        "
+                      >
+                        ${hr_max}
+                      </td>
+                      <td
+                        class="table-text"
+                        align="left"
+                        style="
+                          padding-right: 4px;
+                          padding-left: 4px;
+                          font-size: 16px;
+                          line-height: 24px;
+                          font-weight: 400;
+                          color: #707070;
+                          border: solid 1px #00a9ec;
+                        "
+                      >
+                        ${hr_min}
+                      </td>
+                      <td
+                        class="table-text"
+                        align="left"
+                        style="
+                          padding-right: 4px;
+                          padding-left: 4px;
+                          font-size: 16px;
+                          line-height: 24px;
+                          font-weight: 400;
+                          color: #707070;
+                          border: solid 1px #00a9ec;
+                        "
+                      >
+                        ${hr_aver}
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td
+                        class="table-text"
+                        align="left"
+                        style="
+                          padding-right: 4px;
+                          padding-left: 4px;
+                          font-size: 16px;
+                          line-height: 24px;
+                          font-weight: 400;
+                          color: #707070;
+                          border: solid 1px #00a9ec;
+                        "
+                      >
+                        EcgAnalyzer
+                      </td>
+                      <td
+                        class="table-text"
+                        align="left"
+                        style="
+                          padding-right: 4px;
+                          padding-left: 4px;
+                          font-size: 16px;
+                          line-height: 24px;
+                          font-weight: 400;
+                          color: #707070;
+                          border: solid 1px #00a9ec;
+                        "
+                      >
+                        ${hr_max_new}
+                      </td>
+                      <td
+                        class="table-text"
+                        align="left"
+                        style="
+                          padding-right: 4px;
+                          padding-left: 4px;
+                          font-size: 16px;
+                          line-height: 24px;
+                          font-weight: 400;
+                          color: #707070;
+                          border: solid 1px #00a9ec;
+                        "
+                      >
+                        ${hr_min_new}
+                      </td>
+                      <td
+                        class="table-text"
+                        align="left"
+                        style="
+                          padding-right: 4px;
+                          padding-left: 4px;
+                          font-size: 16px;
+                          line-height: 24px;
+                          font-weight: 400;
+                          color: #707070;
+                          border: solid 1px #00a9ec;
+                        "
+                      >
+                        ${hr_aver_new}
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <!-- DATA TABLE // -->
+
+              <!-- PARAGRAPH 2 -->
+              <tr>
+                <td
+                  align="left"
+                  class="p"
+                  style="
+                    padding-top: 25px;
+                    padding-right: 50px;
+                    padding-left: 50px;
+                    font-size: 16px;
+                    line-height: 24px;
+                    font-weight: 400;
+                    color: #707070;
+                  "
+                >
+                  Should you have any technical questions, please do not
+                  hesitate to
+                  <a
+                    href="mailto:support@ecordum.com"
+                    style="
+                      color: #00a9ec;
+                      font-weight: 500;
+                      text-decoration: none;
+                    "
+                    >contact us</a
+                  >.
+                </td>
+              </tr>
+
+              <!-- SIGN OFF -->
+              <tr>
+                <td
+                  align="left"
+                  class="p block-start"
+                  style="
+                    padding-top: 50px;
+                    padding-bottom: 50px;
+                    padding-right: 50px;
+                    padding-left: 50px;
+                    font-size: 16px;
+                    line-height: 24px;
+                    font-weight: 400;
+                    color: #707070;
+                  "
+                >
+                  Thank you,
+                  <br />
+                  eCordum™ Technical Support
+                </td>
+              </tr>
+              <!-- EMAIL TEXT // -->
+
+              <!-- FOOTER -->
+              <tr>
+                <td
+                  align="left"
+                  bgcolor="#E0E0E0"
+                  class="p"
+                  style="
+                    padding-top: 50px;
+                    padding-bottom: 50px;
+                    padding-right: 50px;
+                    padding-left: 50px;
+                    font-size: 16px;
+                    line-height: 24px;
+                    font-weight: 400;
+                    color: #707070;
+                  "
+                >
+                  This email and any files transmitted with it are confidential
+                  and intended solely for the use of the individual or entity to
+                  whom they are addressed.
+                </td>
+              </tr>
+
+              <!-- SUB FOOTER -->
+              <tr>
+                <td
+                  class="logoContainer"
+                  align="center"
+                  bgcolor="#EEEEEE"
+                  style="padding-top: 25px; padding-bottom: 50px"
+                >
+                  <a href="https://www.ecordum.com/" target="_blank">
+                    <img
+                      src="http://images.ecordum.com/images/ecordum_logo_gray.png"
+                      alt="ecordum logo link"
+                      height="34"
+                      width="auto"
+                    />
+                  </a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+        <!-- MAIN CONTENT CELL // -->
+
+        <!-- // RIGHT SPACER CELL *** MUST HAVE A BACKGROUND COLOUR -->
+        <td bgcolor="#EEEEEE" style="font-size: 0px">&zwnj;</td>
+        <!-- RIGHT SPACER CELL // -->
+      </tr>
+    </table>
+    <!-- FULL EMAIL // -->
+  </body>
+</html>
